@@ -1,0 +1,25 @@
+<html ng-app="myApp">
+  <head>
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js">
+    </script>  
+    <script src="public/javascripts/app.js"></script>
+    
+  </head>
+  
+  <body ng-controller="Ctrl">
+    Nombre: <input ng-model="newProd.nombre" /><br>
+    Precio: <input ng-model="newProd.precio" /><br>
+    <button ng-click="agregar()">Save</button>
+    <hr>
+    <h2>Lista de Productos: </h2>
+    <div ng-repeat="prod in misProductos">
+      Nombre: {{prod.nombre}}<br>
+      Precio: {{prod.precio}}<br>
+      <button ng-click="update(prod)">UpDate</button>
+      <button ng-click="borrar(prod, $index)">Borrar</button>
+      <hr>
+    </div>
+  </body>
+</html>
